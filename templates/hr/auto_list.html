@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Auto List{% endblock %}
+{% block content %}
+<h2>Auto Records</h2>
+<a href="{% url 'staff_dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Data Entry</th><th>Description</th><th>Tkt No</th><th>Date</th><th>Job ID</th><th>Job #</th><th>Phase</th><th>Type</th><th>Emp ID</th><th>Employee Name</th><th>PR Date</th><th>Days</th><th>Cost</th><th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for auto in autos %}
+        <tr>
+            <td>{{ auto.data_entry }}</td><td>{{ auto.description }}</td><td>{{ auto.tkt_no }}</td><td>{{ auto.date }}</td><td>{{ auto.job_id }}</td><td>{{ auto.job_no }}</td><td>{{ auto.phase }}</td><td>{{ auto.type }}</td><td>{{ auto.emp_id }}</td><td>{{ auto.employee_name }}</td><td>{{ auto.pr_date|default:'N/A' }}</td><td>{{ auto.days }}</td><td>{{ auto.cost }}</td><td>{{ auto.total }}</td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="14">No auto records.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

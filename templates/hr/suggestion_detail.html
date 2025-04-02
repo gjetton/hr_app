@@ -1,0 +1,10 @@
+<!-- hr_app/templates/hr/suggestion_detail.html -->
+{% extends 'base.html' %}
+{% block title %}Suggestion Detail{% endblock %}
+{% block content %}
+<h2>Suggestion Detail</h2>
+<p><strong>Submitted by:</strong> {{ suggestion.user.first_name }} {{ suggestion.user.last_name }}</p>
+<p><strong>Suggestion:</strong> {{ suggestion.suggestion_text }}</p>
+<p><strong>Submitted At:</strong> {{ suggestion.submitted_at }}</p>
+<a href="{% url 'staff_dashboard' %}" class="btn btn-secondary mt-3">Back to Dashboard</a>
+{% endblock %}

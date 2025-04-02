@@ -1,0 +1,28 @@
+cd /home/hradmin/hr_app
+source venv/bin/activate
+
+python manage.py runserver 0.0.0.0:8000
+
+python3 manage.py runserver
+
+python3 manage.py makemigrations
+
+python3 manage.py migrate
+
+python manage.py migrate
+
+celery -A hr_app worker -l info
+
+celery -A hr_app beat -l info
+
+redis-cli ping
+
+cd ~/hr_app
+source venv/bin/activate
+
+gunicorn --bind 127.0.0.1:8000 hr_app.wsgi
+
+sudo systemctl reload nginx
+sudo systemctl restart gunicorn
+
+sudo journalctl -u gunicorn -n 50

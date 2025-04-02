@@ -1,0 +1,15 @@
+<!-- hr_app/templates/hr/hazard_report_detail.html -->
+{% extends 'base.html' %}
+{% block title %}Hazard Report Detail{% endblock %}
+{% block content %}
+<h2>Hazard Report Detail</h2>
+<p><strong>Reported by:</strong> {{ hazard.user.first_name }} {{ hazard.user.last_name }}</p>
+<p><strong>Hazard Type:</strong> {{ hazard.hazard_type }}</p>
+<p><strong>Description:</strong> {{ hazard.description }}</p>
+<p><strong>Reported At:</strong> {{ hazard.reported_at }}</p>
+{% if hazard.photo %}
+    <p><strong>Photo:</strong></p>
+    <img src="{{ hazard.photo.url }}" alt="Hazard Photo" style="max-width: 300px;">
+{% endif %}
+<a href="{% url 'staff_dashboard' %}" class="btn btn-secondary mt-3">Back to Dashboard</a>
+{% endblock %}

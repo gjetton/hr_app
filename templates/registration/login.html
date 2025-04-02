@@ -1,0 +1,33 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h2>Login</h2>
+
+{% if messages %}
+    <div class="messages mt-3">
+        {% for message in messages %}
+            <div class="alert {% if message.tags == 'error' %}alert-danger{% elif message.tags == 'success' %}alert-success{% else %}alert-info{% endif %}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="id_username" class="form-label">Username:</label>
+        <input type="text" name="username" id="id_username" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="id_password" class="form-label">Password:</label>
+        <input type="password" name="password" id="id_password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <a href="{% url 'signup' %}" class="btn btn-secondary ms-2">Create an Account</a>
+</form>
+
+{% endblock %}

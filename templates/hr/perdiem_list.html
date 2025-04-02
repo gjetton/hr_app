@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Perdiem List{% endblock %}
+{% block content %}
+<h2>Perdiem Records</h2>
+<a href="{% url 'staff_dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Data Entry</th><th>Description</th><th>Ticket #</th><th>Date</th><th>Job ID</th><th>Job #</th><th>Phase</th><th>Type</th><th>Employee ID</th><th>Employee Name</th><th>PR Date</th><th>Days</th><th>Cost</th><th>Total</th><th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for perdiem in perdiems %}
+        <tr>
+            <td>{{ perdiem.data_entry }}</td><td>{{ perdiem.description }}</td><td>{{ perdiem.ticket_no }}</td><td>{{ perdiem.date }}</td><td>{{ perdiem.job_id }}</td><td>{{ perdiem.job_no }}</td><td>{{ perdiem.phase }}</td><td>{{ perdiem.type }}</td><td>{{ perdiem.employee_id }}</td><td>{{ perdiem.employee_name }}</td><td>{{ perdiem.pr_date|default:'N/A' }}</td><td>{{ perdiem.days }}</td><td>{{ perdiem.cost }}</td><td>{{ perdiem.total }}</td><td>{{ perdiem.notes }}</td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="15">No perdiem records.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

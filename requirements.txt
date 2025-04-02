@@ -1,0 +1,79 @@
+amqp==5.3.1  # Likely needed for Celery with RabbitMQ
+asgiref==3.8.1  # Django dependency
+async-timeout==5.0.1  # Useful for async tasks, possibly Celery-related
+attrs==22.2.0  # Common dependency for many Python libraries
+Automat==20.2.0  # Used by Twisted, keep if you use Twisted
+Babel==2.8.0  # For internationalization, keep if your app uses it
+bcrypt==3.2.0  # For password hashing, keep if used
+beautifulsoup4==4.10.0  # HTML parsing, keep if scraping or parsing
+billiard==3.6.4.0  # Celery dependency
+blinker==1.4  # Signal library, keep if used
+Brotli==1.0.9  # Compression, keep if you handle compressed data
+celery==5.2.7  # Confirmed needed
+certifi==2020.6.20  # SSL/TLS, keep for requests
+chardet==4.0.0  # Encoding detection, keep for requests
+click==8.0.3  # CLI tools, keep if you have custom commands
+click-didyoumean==0.3.1  # CLI enhancement, keep if used
+click-plugins==1.1.1  # CLI enhancement, keep if used
+click-repl==0.3.0  # CLI enhancement, keep if used
+# cloud-init==24.4  # System package, already commented out
+colorama==0.4.4  # Terminal colors, keep if CLI output is customized
+# command-not-found==0.3  # System utility, not a Python dependency
+# configobj==5.0.6  # System config parser, unlikely for Django
+constantly==15.1.0  # Twisted dependency, keep if Twisted is used
+cryptography==3.4.8  # Security, keep if encryption is used
+# cupshelpers==1.0  # Printing system helper, unlikely for Django
+# dbus-python==1.2.18  # System bus, unlikely unless integrating with desktop
+# defer==1.0.6  # Old Ubuntu utility, unlikely needed
+# distro==1.7.0  # System info, unlikely unless app queries OS details
+# distro-info==1.1+ubuntu0.2  # Ubuntu-specific, not a Django dep
+Django==5.1.6  # Confirmed needed
+# galternatives==1.0.8  # GUI for alternatives, not a Python dep
+html5lib==1.1  # HTML parsing, keep if used
+httplib2==0.20.2  # HTTP client, keep if making requests
+hyperlink==21.0.0  # Twisted dependency, keep if Twisted is used
+idna==3.3  # URL handling, keep for requests
+importlib-metadata==4.6.4  # Python metadata, keep for compatibility
+incremental==21.3.0  # Twisted dependency, keep if Twisted is used
+# jeepney==0.7.1  # D-Bus for desktop, unlikely unless desktop integration
+Jinja2==3.0.3  # Templating, keep if used alongside Django
+# jsonpatch==1.32  # JSON patching, unlikely unless specific use
+# jsonpointer==2.0  # JSON utility, unlikely unless specific use
+# jsonschema==3.2.0  # JSON validation, keep if validating schemas
+keyring==23.5.0  # Credentials storage, keep if used
+kombu==5.4.2  # Celery messaging, confirmed needed
+# language-selector==0.1  # System utility, not a Django dep
+# launchpadlib==1.10.16  # Launchpad API, unlikely unless integrating with Launchpad
+# lazr.restfulclient==0.14.4  # Launchpad dep, unlikely
+# lazr.uri==1.0.6  # Launchpad dep, unlikely
+# lxml==4.9.0  # XML/HTML parsing, keep if used
+# macaroonbakery==1.3.1  # Ubuntu SSO, unlikely unless specific auth
+MarkupSafe==2.0.1  # Jinja2 dependency, keep if Jinja2 is used
+# meteo_qt==2.1  # Weather app, unlikely for Django
+more-itertools==8.10.0  # Utility, keep for general use
+# mutagen==1.45.1  # Audio metadata, unlikely unless handling media
+# netifaces==0.11.0  # Network interfaces, unlikely unless querying network
+oauthlib==3.2.0  # OAuth, keep if auth involves OAuth
+packaging==21.3  # Dependency management, keep for compatibility
+pexpect==4.8.0  # Process control, keep if used
+pillow==11.1.0  # Image processing, keep if handling images
+prompt_toolkit==3.0.50  # CLI enhancement, keep if CLI is customized
+protobuf==4.25.3  # Serialization, keep if used
+psycopg2-binary==2.9.10  # Confirmed needed for PostgreSQL
+ptyprocess==0.7.0  # pexpect dependency, keep if pexpect is used
+pyasn1==0.4.8  # Crypto dependency, keep if cryptography is used
+pyasn1-modules==0.2.1  # Crypto dependency, keep if cryptography is used
+# pycairo==1.20.1  # Graphics, unlikely unless rendering graphics
+# pycryptodomex==3.11.0  # Crypto, use cryptography instead unless specific need
+# pycups==2.0.1  # Printing, unlikely for Django
+# PyGObject==3.42.1  # GTK bindings, unlikely unless desktop app
+PyHamcrest==2.0.2  # Testing, keep if testing framework uses it
+PyJWT==2.10.1  # JWT auth, keep if used
+# pymacaroons==0.13.0  # Ubuntu SSO, unlikely unless specific auth
+PyNaCl==1.5.0  # Crypto, keep if cryptography is used
+pyOpenSSL==21.0.0  # SSL/TLS, keep if secure connections are used
+pyparsing==2.4.7  # Parsing, keep for dependencies
+# PyQt5==5.15.6  # GUI framework, unlikely for Django unless desktop component
+# PyQt5-sip==12.9.1  # PyQt5 dep, unlikely
+# pyRFC3339==1.1  # Date parsing, unlikely unless specific need
+pyrsistent

@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block title %}Employment Application{% endblock %}
+{% block content %}
+    <h2>Employment Application</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        
+        <h3>Personal Info</h3>
+        <p>{{ form.date_of_birth.label_tag }} {{ form.date_of_birth }} {{ form.date_of_birth.help_text }}</p>
+        <p>{{ form.address_line_1.label_tag }} {{ form.address_line_1 }}</p>
+        <p>{{ form.address_line_2.label_tag }} {{ form.address_line_2 }}</p>
+        <p>{{ form.city.label_tag }} {{ form.city }}</p>
+        <p>{{ form.state.label_tag }} {{ form.state }}</p>
+        <p>{{ form.zip_code.label_tag }} {{ form.zip_code }}</p>
+        <p>{{ form.country.label_tag }} {{ form.country }}</p>
+        <p>{{ form.referred_by.label_tag }} {{ form.referred_by }}</p>
+        <p>{{ form.available_to_start.label_tag }} {{ form.available_to_start }}</p>
+        
+        <h3>Job Details</h3>
+        <p>{{ form.twic.label_tag }} {{ form.twic }} {{ form.twic.help_text }}</p>
+        <p>{{ form.position_applying_for.label_tag }} {{ form.position_applying_for }}</p>
+        <p>{{ form.craft.label_tag }} {{ form.craft }}</p>
+        <p>{{ form.craft_other.label_tag }} {{ form.craft_other }} {{ form.craft_other.help_text }}</p>
+        
+        <h3>Military & Citizenship</h3>
+        <p>{{ form.served_in_military.label_tag }} {{ form.served_in_military }}</p>
+        <p>{{ form.military_branch.label_tag }} {{ form.military_branch }}</p>
+        <p>{{ form.us_citizen.label_tag }} {{ form.us_citizen }}</p>
+        <p>{{ form.work_authorized.label_tag }} {{ form.work_authorized }} {{ form.work_authorized.help_text }}</p>
+        <p>{{ form.worked_here_before.label_tag }} {{ form.worked_here_before }}</p>
+        <p>{{ form.worked_here_when.label_tag }} {{ form.worked_here_when }}</p>
+        <p>{{ form.has_transportation.label_tag }} {{ form.has_transportation }}</p>
+        <p>{{ form.has_felony.label_tag }} {{ form.has_felony }}</p>
+        <p>{{ form.felony_explanation.label_tag }} {{ form.felony_explanation }}</p>
+        
+        <h3>Education</h3>
+        <p>{{ form.high_school.label_tag }} {{ form.high_school }}</p>
+        <p>{{ form.high_school_address.label_tag }} {{ form.high_school_address }}</p>
+        <p>{{ form.high_school_graduated.label_tag }} {{ form.high_school_graduated }}</p>
+        <p>{{ form.high_school_year.label_tag }} {{ form.high_school_year }}</p>
+        <p>{{ form.other_school.label_tag }} {{ form.other_school }}</p>
+        <p>{{ form.other_school_address.label_tag }} {{ form.other_school_address }}</p>
+        <p>{{ form.other_school_graduated.label_tag }} {{ form.other_school_graduated }}</p>
+        <p>{{ form.other_school_year.label_tag }} {{ form.other_school_year }}</p>
+        
+        <h3>Skills & Training</h3>
+        <p>{{ form.skills_training_certs.label_tag }} {{ form.skills_training_certs }} {{ form.skills_training_certs.help_text }}</p>
+        
+        <h3>Employment History - Job 1</h3>
+        <p>{{ form.job_1_company.label_tag }} {{ form.job_1_company }}</p>
+        <p>{{ form.job_1_phone.label_tag }} {{ form.job_1_phone }}</p>
+        <p>{{ form.job_1_address.label_tag }} {{ form.job_1_address }}</p>
+        <p>{{ form.job_1_supervisor.label_tag }} {{ form.job_1_supervisor }}</p>
+        <p>{{ form.job_1_title.label_tag }} {{ form.job_1_title }}</p>
+        <p>{{ form.job_1_start_salary.label_tag }} {{ form.job_1_start_salary }}</p>
+        <p>{{ form.job_1_end_salary.label_tag }} {{ form.job_1_end_salary }}</p>
+        <p>{{ form.job_1_responsibilities.label_tag }} {{ form.job_1_responsibilities }}</p>
+        <p>{{ form.job_1_from.label_tag }} {{ form.job_1_from }}</p>
+        <p>{{ form.job_1_to.label_tag }} {{ form.job_1_to }}</p>
+        <p>{{ form.job_1_reason_for_leaving.label_tag }} {{ form.job_1_reason_for_leaving }}</p>
+        <p>{{ form.job_1_contact_supervisor.label_tag }} {{ form.job_1_contact_supervisor }}</p>
+        
+        <h3>Employment History - Job 2</h3>
+        <p>{{ form.job_2_company.label_tag }} {{ form.job_2_company }}</p>
+        <p>{{ form.job_2_phone.label_tag }} {{ form.job_2_phone }}</p>
+        <p>{{ form.job_2_address.label_tag }} {{ form.job_2_address }}</p>
+        <p>{{ form.job_2_supervisor.label_tag }} {{ form.job_2_supervisor }}</p>
+        <p>{{ form.job_2_title.label_tag }} {{ form.job_2_title }}</p>
+        <p>{{ form.job_2_start_salary.label_tag }} {{ form.job_2_start_salary }}</p>
+        <p>{{ form.job_2_end_salary.label_tag }} {{ form.job_2_end_salary }}</p>
+        <p>{{ form.job_2_responsibilities.label_tag }} {{ form.job_2_responsibilities }}</p>
+        <p>{{ form.job_2_from.label_tag }} {{ form.job_2_from }}</p>
+        <p>{{ form.job_2_to.label_tag }} {{ form.job_2_to }}</p>
+        <p>{{ form.job_2_reason_for_leaving.label_tag }} {{ form.job_2_reason_for_leaving }}</p>
+        <p>{{ form.job_2_contact_supervisor.label_tag }} {{ form.job_2_contact_supervisor }}</p>
+        
+        <h3>Employment History - Job 3</h3>
+        <p>{{ form.job_3_company.label_tag }} {{ form.job_3_company }}</p>
+        <p>{{ form.job_3_phone.label_tag }} {{ form.job_3_phone }}</p>
+        <p>{{ form.job_3_address.label_tag }} {{ form.job_3_address }}</p>
+        <p>{{ form.job_3_supervisor.label_tag }} {{ form.job_3_supervisor }}</p>
+        <p>{{ form.job_3_title.label_tag }} {{ form.job_3_title }}</p>
+        <p>{{ form.job_3_start_salary.label_tag }} {{ form.job_3_start_salary }}</p>
+        <p>{{ form.job_3_end_salary.label_tag }} {{ form.job_3_end_salary }}</p>
+        <p>{{ form.job_3_responsibilities.label_tag }} {{ form.job_3_responsibilities }}</p>
+        <p>{{ form.job_3_from.label_tag }} {{ form.job_3_from }}</p>
+        <p>{{ form.job_3_to.label_tag }} {{ form.job_3_to }}</p>
+        <p>{{ form.job_3_reason_for_leaving.label_tag }} {{ form.job_3_reason_for_leaving }}</p>
+        <p>{{ form.job_3_contact_supervisor.label_tag }} {{ form.job_3_contact_supervisor }}</p>
+        
+        <h3>References</h3>
+        <p>{{ form.ref_1_name.label_tag }} {{ form.ref_1_name }}</p>
+        <p>{{ form.ref_1_company.label_tag }} {{ form.ref_1_company }}</p>
+        <p>{{ form.ref_1_address.label_tag }} {{ form.ref_1_address }}</p>
+        <p>{{ form.ref_1_relationship.label_tag }} {{ form.ref_1_relationship }}</p>
+        <p>{{ form.ref_1_phone.label_tag }} {{ form.ref_1_phone }}</p>
+        <p>{{ form.ref_2_name.label_tag }} {{ form.ref_2_name }}</p>
+        <p>{{ form.ref_2_company.label_tag }} {{ form.ref_2_company }}</p>
+        <p>{{ form.ref_2_address.label_tag }} {{ form.ref_2_address }}</p>
+        <p>{{ form.ref_2_relationship.label_tag }} {{ form.ref_2_relationship }}</p>
+        <p>{{ form.ref_2_phone.label_tag }} {{ form.ref_2_phone }}</p>
+        <p>{{ form.ref_3_name.label_tag }} {{ form.ref_3_name }}</p>
+        <p>{{ form.ref_3_company.label_tag }} {{ form.ref_3_company }}</p>
+        <p>{{ form.ref_3_address.label_tag }} {{ form.ref_3_address }}</p>
+        <p>{{ form.ref_3_relationship.label_tag }} {{ form.ref_3_relationship }}</p>
+        <p>{{ form.ref_3_phone.label_tag }} {{ form.ref_3_phone }}</p>
+        
+        <h3>Disclaimer</h3>
+        <p>{{ form.disclaimer_agreed.label_tag }} {{ form.disclaimer_agreed }} I certify that my answers are true and complete to the best of my knowledge. If this application leads to employment, I understand that false or misleading information in my application or interview may result in my release.</p>
+        
+        <button type="submit">Submit Application</button>
+    </form>
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+    <h2>Sign Up</h2>
+    {% if form.errors %}
+        <p style="color: red;">Please correct the errors below.</p>
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>{{ form.username.label_tag }} {{ form.username }}</p>
+        <p>{{ form.first_name.label_tag }} {{ form.first_name }}</p>
+        <p>{{ form.last_name.label_tag }} {{ form.last_name }}</p>
+        <p>{{ form.email.label_tag }} {{ form.email }}</p>
+        <p>{{ form.password1.label_tag }} {{ form.password1 }}</p>
+        <p>{{ form.password2.label_tag }} {{ form.password2 }}</p>
+        <p>{{ form.cell_number.label_tag }} {{ form.cell_number }}</p>
+        <p>
+            <label>Select Profile Picture (optional):</label><br>
+            <button type="button" id="file_button" class="btn btn-primary me-2">Choose File</button>
+            <input type="file" name="picture" id="id_picture_file" accept="image/*" style="display: none;">
+            <button type="button" id="camera_button" class="btn btn-primary">Camera</button>
+            <input type="file" name="picture" id="id_picture_camera" accept="image/*" capture="environment" style="display: none;">
+            <br>
+            <small class="form-text text-muted">Choose from gallery or take a photo.</small>
+        </p>
+        <button type="submit" class="btn btn-success">Sign Up</button>
+    </form>
+    <a href="{% url 'home' %}" class="btn btn-secondary mt-2">Back to Home</a>
+
+    <script>
+        document.getElementById('file_button').addEventListener('click', function() {
+            document.getElementById('id_picture_file').click();
+        });
+        document.getElementById('camera_button').addEventListener('click', function() {
+            document.getElementById('id_picture_camera').click();
+        });
+    </script>
+{% endblock %}

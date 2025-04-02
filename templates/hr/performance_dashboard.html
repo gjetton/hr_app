@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Performance Dashboard{% endblock %}
+{% block content %}
+<h2>Performance Dashboard</h2>
+<table class="table">
+    <tr><th>Employee</th><th>Sick Hours</th><th>Overtime Hours</th></tr>
+    {% for stat in stats %}
+        <tr>
+            <td>{{ stat.user__username }}</td>
+            <td>{{ stat.sick|default:0 }}</td>
+            <td>{{ stat.overtime|default:0 }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'staff_dashboard' %}" class="btn btn-secondary">Back</a>
+{% endblock %}

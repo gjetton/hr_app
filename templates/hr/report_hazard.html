@@ -1,0 +1,12 @@
+<!-- templates/hr/report_hazard.html -->
+{% extends 'base.html' %}
+{% block title %}Report Hazard{% endblock %}
+{% block content %}
+    <h2>Report a Hazard</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit Report</button>
+    </form>
+    <a href="{% url 'home' %}">Cancel</a>
+{% endblock %}

@@ -1,0 +1,79 @@
+<!-- hr/templates/hr/training_dashboard.html -->
+{% extends 'base.html' %}
+{% block title %}Training Dashboard{% endblock %}
+{% block content %}
+<h2>Training Dashboard</h2>
+
+<div class="mb-3">
+    <a href="{% url 'staff_dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+</div>
+
+<h3>Available Certifications</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Duration (Months)</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for cert in certifications %}
+        <tr>
+            <td>{{ cert.name }}</td>
+            <td>{{ cert.duration_months }}</td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="2">No certifications available.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h3>Employee Certifications</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Certification</th>
+            <th>Completed</th>
+            <th>Expires</th>
+            <th>Valid</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for ec in employee_certs %}
+        <tr>
+            <td>{{ ec.employee.last_name }}, {{ ec.employee.first_name }}</td>
+            <td>{{ ec.certification.name }}</td>
+            <td>{{ ec.completion_date }}</td>
+            <td>{{ ec.expiration_date|default:"N/A" }}</td>
+            <td>{{ ec.is_valid|yesno:"Yes,No" }}</td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="5">No employee certifications recorded.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h3>Jobsite Eligibility</h3>
+{% for jobsite, data in eligibility_data.items %}
+    <h4>{{ jobsite }}</h4>
+    <p><strong>Required Certifications:</strong> {{ data.required|join:", " }}</p>
+    <h5>Eligible Employees</h5>
+    <ul>
+    {% for emp in data.eligible %}
+        <li>{{ emp.last_name }}, {{ emp.first_name }}</li>
+    {% empty %}
+        <li>No eligible employees</li>
+    {% endfor %}
+    </ul>
+    <h5>Close to Eligible</h5>
+    <ul>
+    {% for emp, missing in data.close %}
+        <li>{{ emp.last_name }}, {{ emp.first_name }} (Missing: {{ missing|join:", " }})</li>
+    {% empty %}
+        <li>No employees close to eligibility</li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+
+{% endblock %}
