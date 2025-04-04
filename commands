@@ -26,3 +26,6 @@ sudo systemctl reload nginx
 sudo systemctl restart gunicorn
 
 sudo journalctl -u gunicorn -n 50
+
+
+github token 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

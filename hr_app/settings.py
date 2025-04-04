@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hr',
     'django_celery_beat',
+    'django.template.defaultfilters',
 ]
 
 MIDDLEWARE = [
