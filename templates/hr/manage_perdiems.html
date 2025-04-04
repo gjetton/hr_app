@@ -1,0 +1,18 @@
+<!-- hr_app/hr/templates/hr/manage_perdiems.html -->
+{% extends "base.html" %}
+{% block content %}
+<h1>Manage Per Diems</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Assign Per Diem</button>
+</form>
+<h2>Current Per Diems</h2>
+<ul>
+{% for perdiem in perdiems %}
+    <li>{{ perdiem.employee.username }} - ${{ perdiem.rate }}/day ({{ perdiem.start_date }} to {{ perdiem.end_date|default:"Ongoing" }}) by {{ perdiem.assigned_by.username }}</li>
+{% empty %}
+    <li>No per diems assigned.</li>
+{% endfor %}
+</ul>
+{% endblock %}

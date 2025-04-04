@@ -1,0 +1,18 @@
+<!-- hr_app/hr/templates/hr/manage_auto_expenses.html -->
+{% extends "base.html" %}
+{% block content %}
+<h1>Manage Automobile Expenses</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Assign Auto Expense</button>
+</form>
+<h2>Current Auto Expenses</h2>
+<ul>
+{% for expense in auto_expenses %}
+    <li>{{ expense.employee.username }} - ${{ expense.rate }} ({{ expense.start_date }} to {{ expense.end_date|default:"Ongoing" }}) {{ expense.notes }} by {{ expense.assigned_by.username }}</li>
+{% empty %}
+    <li>No auto expenses assigned.</li>
+{% endfor %}
+</ul>
+{% endblock %}

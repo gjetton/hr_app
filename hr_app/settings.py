@@ -89,8 +89,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/hradmin/media'
+MEDIA_ROOT = '/home/hradmin/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
